@@ -2,23 +2,20 @@ package pkg
 
 import (
 	"crypto/sha256"
-	"encoding/hex"
 )
 
-func GetCheckSum(privateKeyHex string) string {
-	privateKeyBytes := []byte(privateKeyHex)
-
+func GetCheckSum(input []byte) []byte {
 	firstHash := sha256.New()
-	firstHash.Write(privateKeyBytes)
+	firstHash.Write(input)
 
-	firstPrivateKeyHashed := firstHash.Sum(nil)
+	first := firstHash.Sum(nil)
 
 	secondHash := sha256.New()
-	secondHash.Write(firstPrivateKeyHashed)
+	secondHash.Write(first)
 
-	secoundPrivateKeyHashed := secondHash.Sum(nil)
+	second := secondHash.Sum(nil)
 
-  checkSum := hex.EncodeToString(secoundPrivateKeyHashed[:4])
+  checkSum := second[:4]
   
   return checkSum
 }

@@ -2,20 +2,16 @@ package pkg
 
 import (
 	"crypto/rand"
-	"encoding/hex"
 )
 
-func GeneratePrivateKey() (string, error) {
+func GeneratePrivateKey() ([]byte, error) {
   privateKeyBytes := make([]byte, 32)
 
   _, err := rand.Read(privateKeyBytes)
 
   if err != nil {
-    return "", err
+    return nil, err
   }
 
-  privateKeyHex := hex.EncodeToString(privateKeyBytes)
-
-
-  return privateKeyHex, nil
+  return privateKeyBytes, nil
 }

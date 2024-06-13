@@ -6,8 +6,10 @@ import (
 	"github.com/btcsuite/btcd/btcec"
 )
 
-func GeneratePublicKey(privateKey string) string {
-	_, publicKey := btcec.PrivKeyFromBytes(btcec.S256(), []byte(privateKey))
+func GeneratePublicKey(privateKey []byte) string {
+	_, publicKey := btcec.PrivKeyFromBytes(btcec.S256(), privateKey)
 
-  return hex.EncodeToString(publicKey.SerializeUncompressed())
+	publicKeyBytes := publicKey.SerializeUncompressed()
+
+	return string(hex.EncodeToString(publicKeyBytes))
 }

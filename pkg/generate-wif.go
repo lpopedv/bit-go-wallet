@@ -1,14 +1,18 @@
 package pkg
 
-import "github.com/btcsuite/btcutil/base58"
+import (
+	"github.com/btcsuite/btcutil/base58"
+)
 
-func GenerateWif(version, privateKey string) string {
-  privateKeyWithVersion := version + privateKey
+func GenerateWif(version, privateKey []byte) string  {
+	privateKeyWithVersion := append(version, privateKey...)
+
   checkSum := GetCheckSum(privateKeyWithVersion)
 
-  wif := privateKeyWithVersion + checkSum
+	wif := append(privateKeyWithVersion, checkSum...)
 
-  wifInBase58 := base58.Encode([]byte(wif))
 
-  return wifInBase58 
+  base68Wif := base58.Encode(wif)
+
+	return base68Wif
 }
