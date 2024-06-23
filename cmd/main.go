@@ -18,7 +18,7 @@ func main() {
 	publicKey := pkg.GeneratePublicKey(privateKey)
 	privateKeyHex := hex.EncodeToString(privateKey)
 
-btcWallet := pkg.GenerateBitcoinWallet([]byte{0x00}, publicKey)
+	btcWallet := pkg.GenerateBitcoinWallet([]byte{0x00}, publicKey)
 
-fmt.Printf("Private Key: %s \nWIF: %s \nPublic Key: %s \nBitcoin Wallet: %s", privateKeyHex, wif, publicKey, btcWallet)
+	fmt.Printf("Private Key: %s \nWIF: %s \nPublic Key: %s \nBitcoin Wallet: %s\n", privateKeyHex, wif, publicKey, btcWallet)
 }

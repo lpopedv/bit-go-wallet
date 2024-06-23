@@ -15,7 +15,7 @@ func GetCheckSum(input []byte) []byte {
 
 	second := secondHash.Sum(nil)
 
-  checkSum := second[:4]
-  
-  return checkSum
+	checkSum := second[:4]
+
+	return checkSum
 }
