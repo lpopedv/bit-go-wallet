@@ -23,7 +23,7 @@ Este projeto foi desenvolvido com o objetivo de compreender melhor o funcionamen
 1. Clone este repositório:
    ```sh
    git clone https://github.com/lpopedv/bit-go-wallet
-   cd bit-go-waller
+   cd bit-go-wallet
    ```
 
 2. Execute o programa:
