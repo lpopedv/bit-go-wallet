@@ -1,47 +1,46 @@
-# Projeto de Geração de Carteiras Bitcoin em Go
+# Bitcoin Wallet Generation Project in Go
 
-Este projeto foi desenvolvido com o objetivo de compreender melhor o funcionamento da criptografia envolvida na criação de carteiras de Bitcoin. Utilizando a linguagem Go, o projeto gera pares de chaves públicas e privadas, e os converte em endereços de Bitcoin.
+This project was developed to better understand the cryptography involved in creating Bitcoin wallets. Using the Go programming language, the project generates public and private key pairs and converts them into Bitcoin addresses.
 
-## Objetivos
+## Objectives
 
-- Estudar e entender os conceitos de criptografia aplicados às carteiras de Bitcoin.
-- Implementar a geração de chaves privadas e públicas utilizando a linguagem Go.
-- Converter as chaves públicas em endereços Bitcoin válidos.
+- Study and understand the cryptographic concepts applied to Bitcoin wallets.
+- Implement the generation of private and public keys using Go.
+- Convert the public keys into valid Bitcoin addresses.
 
-## Pré-requisitos
+## Prerequisites
 
-- [Go](https://golang.org/dl/) instalado no sistema.
+- [Go](https://golang.org/dl/) installed on your system.
 
-## Conceitos de criptografia utilizados
+## Cryptographic Concepts Used
 
-- ECDSA (Elliptic Curve Digital Signature Algorithm): Algoritmo utilizado para gerar as chaves pública e privada.
-- SHA-256 e RIPEMD-160: Funções hash usadas para converter a chave pública em um endereço Bitcoin.
-- WIF (Wallet Import Format): Formato de importação de carteira utilizado para simplificar o manuseio de chaves privadas.
+- ECDSA (Elliptic Curve Digital Signature Algorithm): The algorithm used to generate public and private keys.
+- SHA-256 and RIPEMD-160: Hash functions used to convert the public key into a Bitcoin address.
+- WIF (Wallet Import Format): A wallet import format used to simplify handling private keys.
 
-## Como usar
+## How to Use
 
-1. Clone este repositório:
+1. Clone this repository:
    ```sh
    git clone https://github.com/lpopedv/bit-go-wallet
    cd bit-go-wallet
    ```
 
-2. Execute o programa:
+2. Run the program:
     ```sh
     go run cmd/main.go
     ```
 
-3. O programa irá gerar e exibir a chave privada, a chave WIF (Wallet Import Format), a chave pública e o endereço Bitcoin correspondente no terminal.
+3. The program will generate and display the private key, WIF (Wallet Import Format) key, public key, and the corresponding Bitcoin address in the terminal.
 
-## Estrutura do projeto
-- main.go: Contém a lógica principal para geração de chaves e endereços de Bitcoin.
-- pkg/: Contém pacotes auxiliares para geração de chaves e endereços.
+## Project Structure
+- main.go: Contains the main logic for generating keys and Bitcoin addresses.
+- pkg/: Contains auxiliary packages for key and address generation.
 
-## Exemplo
+## Example
 ```sh
     Private Key: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
     WIF: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
     Public Key: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx 
     Bitcoin Wallet: 1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa
 ```
-
